@@ -1,5 +1,9 @@
 # Saas Platform
 
+## what is saas
+
+Software as a service is a software licensing and delivery model in which software is licensed on a subscription basis and is centrally hosted.
+
 ## Getting Started
 
 First, run the development server:
