@@ -3,6 +3,7 @@ import { buttonVariants } from "./ui/button";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import MobileNav from "./MobileNav";
 import Image from "next/image";
+import { ModeToggle } from "./ModeToggle";
 
 const Navbar = () => {
   //   const { getUser } = getKindeServerSession();
@@ -23,6 +24,7 @@ const Navbar = () => {
           <div className="hidden items-center space-x-4 sm:flex">
             {/* login logic */}
           </div>
+          <ModeToggle />
         </div>
       </MaxWidthWrapper>
     </nav>
