@@ -10,6 +10,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 const words = `MomentumX allows you to have conversations with any PDF documents.
 Simply upload your file and start asking questions.`;
@@ -18,6 +19,7 @@ export default function Home() {
   return (
     <>
       <MaxWidthWrapper className="mb-12 mt-28 sm:mt-40 flex flex-col items-center justify-center text-center">
+        {/* <WavyBackground className="max-w-4xl mx-auto pb-40"> */}
         <div className="mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-gray-300 hover:bg-white/50">
           <p className="text-sm font-semibold text-blue-600">
             MomentumX is live
@@ -27,16 +29,16 @@ export default function Home() {
           Chat with your <span className="text-blue-600">Documents</span> in
           seconds
         </h1>
-        <p className="mt-5 max-w-prose text-gray-700 sm:text-lg">
-          <TextGenerateEffect words={words} />
-          {/* MomentumX allows you to have conversations with any PDF documents.
-          Simply upload your file and start asking questions. */}
+        <p className="mt-5 max-w-prose text-gray-700 sm:text-lg text-center">
+          MomentumX allows you to have conversations with any PDF documents.
+          Simply upload your file and start asking questions.
         </p>
         <Link href="/dashboard" target="_blank">
-          <Button className="mt-5 bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-lg flex items-center">
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-lg flex items-center">
             Get started <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </Link>
+        {/* </WavyBackground> */}
       </MaxWidthWrapper>
 
       <div>
