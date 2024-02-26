@@ -9,6 +9,10 @@ import {
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+
+const words = `MomentumX allows you to have conversations with any PDF documents.
+Simply upload your file and start asking questions.`;
 
 export default function Home() {
   return (
@@ -24,8 +28,9 @@ export default function Home() {
           seconds
         </h1>
         <p className="mt-5 max-w-prose text-gray-700 sm:text-lg">
-          MomentumX allows you to have conversations with any PDF documents.
-          Simply upload your file and start asking questions.
+          <TextGenerateEffect words={words} />
+          {/* MomentumX allows you to have conversations with any PDF documents.
+          Simply upload your file and start asking questions. */}
         </p>
         <Link href="/dashboard" target="_blank">
           <Button className="mt-5 bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-lg flex items-center">
