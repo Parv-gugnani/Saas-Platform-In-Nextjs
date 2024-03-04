@@ -1,5 +1,6 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { Button } from "@/components/ui/button";
+import ContactForm from "@/components/ContactForm";
 import {
   Accordion,
   AccordionContent,
