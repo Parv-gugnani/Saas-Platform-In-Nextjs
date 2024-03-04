@@ -5,39 +5,54 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-600 py-5 text-white absolute w-full">
+    <footer className="bg-blue-600 py-8 text-white">
       <div className="container mx-auto flex flex-col items-center justify-center">
-        <div className="flex items-center mb-4">
-          <Link href="/contact" passHref>
-            <p className="mr-6 cursor-pointer hover:text-gray-200">
+        <div className="flex items-center mb-6">
+          <Link href="/contact" target="_blank">
+            <p className="mr-6 text-lg cursor-pointer hover:text-gray-200 transition-colors duration-300">
               Contact Us
             </p>
           </Link>
           <Link href="/about" passHref>
-            <p className="mr-6 cursor-pointer hover:text-gray-200">About Us</p>
+            <p className="mr-6 text-lg cursor-pointer hover:text-gray-200 transition-colors duration-300">
+              About Us
+            </p>
           </Link>
           <Link href="/services" passHref>
-            <p className="mr-6 cursor-pointer hover:text-gray-200">Services</p>
+            <p className="mr-6 text-lg cursor-pointer hover:text-gray-200 transition-colors duration-300">
+              Services
+            </p>
           </Link>
           <Link href="/blog" passHref>
-            <p className="cursor-pointer hover:text-gray-200">Blog</p>
+            <p className="text-lg cursor-pointer hover:text-gray-200 transition-colors duration-300">
+              Blog
+            </p>
           </Link>
         </div>
-        <div className="flex items-center mb-4">
-          <a href="#" className="mr-4 hover:text-gray-200">
+        <div className="flex items-center mb-6">
+          <a
+            href="#"
+            className="mr-4 text-xl hover:text-gray-200 transition-colors duration-300"
+          >
             <FaFacebook />
           </a>
-          <a href="#" className="mr-4 hover:text-gray-200">
+          <a
+            href="#"
+            className="mr-4 text-xl hover:text-gray-200 transition-colors duration-300"
+          >
             <FaTwitter />
           </a>
-          <a href="#" className="hover:text-gray-200">
+          <a
+            href="#"
+            className="text-xl hover:text-gray-200 transition-colors duration-300"
+          >
             <FaInstagram />
           </a>
         </div>
-        <p className="mb-2">
-          © {new Date().getFullYear()} Your Website Name. All rights reserved.
+        <p className="mb-4 text-sm">
+          © {new Date().getFullYear()} MomentumX. All rights reserved.
         </p>
-        <p>Designed and developed by Your Name</p>
+        <p className="text-sm">Designed and developed by Parv</p>
       </div>
     </footer>
   );

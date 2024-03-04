@@ -1,6 +1,7 @@
 import { type ClassValue, clsx } from "clsx";
 import { Metadata } from "next";
 import { twMerge } from "tailwind-merge";
+import { FormData } from "@/components/ContactForm";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -54,9 +55,4 @@ export function constructMetadata({
       },
     }),
   };
-}
-
-export function sendEmail(data: FormData) {
-  // TODO: send email
-  console.log(data);
 }

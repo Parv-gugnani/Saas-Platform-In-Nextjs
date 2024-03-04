@@ -1,98 +1,92 @@
 "use client";
-// ContactForm.tsx
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import { FC, useState } from "react";
+import { useForm } from "react-hook-form";
 
-interface FormData {
+import { sendEmail } from "@/lib/send-email";
+
+export type FormData = {
   name: string;
   email: string;
   message: string;
-}
+};
 
-const ContactForm: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    message: "",
-  });
+const ContactForm: FC = () => {
+  const { register, handleSubmit, reset } = useForm<FormData>();
+  const [submitting, setSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const onSubmit = async (data: FormData) => {
+    setSubmitting(true);
     try {
-      const response = await fetch("/api/sendMail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      if (response.ok) {
-        // handle success
-        console.log("Email sent successfully");
-      } else {
-        // handle error
-        console.error("Failed to send email");
-      }
+      await sendEmail(data);
+      setSuccessMessage("Email sent successfully!");
+      reset(); // Reset the form after successful submission
     } catch (error) {
+      setErrorMessage("Error sending email. Please try again later.");
       console.error("Error sending email:", error);
+    } finally {
+      setSubmitting(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-      <div className="mb-4">
-        <label htmlFor="name" className="block text-gray-700">
-          Name
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="mb-5">
+        <label
+          htmlFor="name"
+          className="mb-3 block text-base font-medium text-black"
+        >
+          Full Name
         </label>
         <input
           type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500"
-          required
+          placeholder="Full Name"
+          className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
+          {...register("name", { required: true })}
         />
       </div>
-      <div className="mb-4">
-        <label htmlFor="email" className="block text-gray-700">
-          Email
+      <div className="mb-5">
+        <label
+          htmlFor="email"
+          className="mb-3 block text-base font-medium text-black"
+        >
+          Email Address
         </label>
         <input
           type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500"
-          required
+          placeholder="example@domain.com"
+          className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
+          {...register("email", { required: true })}
         />
       </div>
-      <div className="mb-4">
-        <label htmlFor="message" className="block text-gray-700">
+      <div className="mb-5">
+        <label
+          htmlFor="message"
+          className="mb-3 block text-base font-medium text-black"
+        >
           Message
         </label>
         <textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
           rows={4}
-          className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500"
-          required
-        ></textarea>
+          placeholder="Type your message"
+          className="w-full resize-none rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
+          {...register("message", { required: true })}
+        />
       </div>
-      <button
-        type="submit"
-        className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition-colors duration-300"
-      >
-        Send Message
-      </button>
+      <div>
+        <button
+          type="submit"
+          disabled={submitting}
+          className="hover:shadow-form rounded-md bg-purple-500 py-3 px-8 text-base font-semibold text-white outline-none"
+        >
+          {submitting ? "Submitting..." : "Submit"}
+        </button>
+      </div>
+      {successMessage && (
+        <p className="text-green-600 mt-3">{successMessage}</p>
+      )}
+      {errorMessage && <p className="text-red-600 mt-3">{errorMessage}</p>}
     </form>
   );
 };
