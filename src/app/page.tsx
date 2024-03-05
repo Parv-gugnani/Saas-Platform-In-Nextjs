@@ -52,7 +52,7 @@ export default function Home() {
             Get started <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </Link>
-        <Button formAction={send}>test</Button>
+        {/* <Button formAction={send}>test</Button> */}
       </MaxWidthWrapper>
 
       <div>
