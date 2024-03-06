@@ -26,7 +26,7 @@ export default function RootLayout({
       <Providers>
         <body
           className={cn(
-            "min-h-screen font-sans antialiased grainy",
+            "min-h-screen font-sans antialiased grainy ",
             inter.className
           )}
         >

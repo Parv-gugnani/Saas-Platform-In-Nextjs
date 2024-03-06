@@ -5,7 +5,7 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-600 py-8 text-white">
+    <footer className="bg-gradient-to-t from-black to-yellow-100 py-8 text-white">
       <div className="container mx-auto flex flex-col items-center justify-center">
         <div className="flex items-center mb-6">
           <Link href="/contact" target="_blank">
