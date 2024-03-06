@@ -13,22 +13,14 @@ import Link from "next/link";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import Footer from "@/components/Footer";
-import { sendMail } from "@/lib/mail";
 
+//service id  - service_xc3nlhp
+//
 const words = `MomentumX allows you to have conversations with any PDF documents.
 Simply upload your file and start asking questions.`;
 
 export default function Home() {
   //
-  const send = async () => {
-    "use server";
-    await sendMail({
-      to: "xxx@gmail.com",
-      name: "Parv",
-      subject: "Test Mail",
-      body: "Hey this is amazing!",
-    });
-  };
 
   //
   return (

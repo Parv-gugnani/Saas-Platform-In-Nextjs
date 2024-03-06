@@ -1,94 +1,115 @@
+// "service_xc3nlhp", "template_tvo19w3", "#contact-form", "z5R67PY6AZ6eSaGI5"; // Pass the user ID here
 "use client";
-import { FC, useState } from "react";
-import { useForm } from "react-hook-form";
+import React, { useRef, useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
+import "./contactform.css";
 
-import { sendEmail } from "@/lib/send-email";
+export default function ContactForm() {
+  const emailRef = useRef<HTMLInputElement>(null);
+  const nameRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null); // Reference for the message input field
+  const [loading, setLoading] = useState(false);
 
-export type FormData = {
-  name: string;
-  email: string;
-  message: string;
-};
+  useEffect(() => {
+    emailjs.init("z5R67PY6AZ6eSaGI5");
+  }, []);
 
-const ContactForm: FC = () => {
-  const { register, handleSubmit, reset } = useForm<FormData>();
-  const [submitting, setSubmitting] = useState(false);
-  const [successMessage, setSuccessMessage] = useState<string | null>(null);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
-
-  const onSubmit = async (data: FormData) => {
-    setSubmitting(true);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const serviceId = "service_xc3nlhp";
+    const templateId = "template_tvo19w3";
     try {
-      await sendEmail(data);
-      setSuccessMessage("Email sent successfully!");
-      reset(); // Reset the form after successful submission
+      setLoading(true);
+      await emailjs.send(serviceId, templateId, {
+        name: nameRef.current?.value,
+        recipient: emailRef.current?.value,
+        message: messageRef.current?.value, // Include the message in the email data
+      });
+      alert("Email successfully sent. Check your inbox.");
     } catch (error) {
-      setErrorMessage("Error sending email. Please try again later.");
-      console.error("Error sending email:", error);
+      console.log(error);
     } finally {
-      setSubmitting(false);
+      setLoading(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="mb-5">
-        <label
-          htmlFor="name"
-          className="mb-3 block text-base font-medium text-black"
-        >
-          Full Name
-        </label>
-        <input
-          type="text"
-          placeholder="Full Name"
-          className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
-          {...register("name", { required: true })}
-        />
-      </div>
-      <div className="mb-5">
-        <label
-          htmlFor="email"
-          className="mb-3 block text-base font-medium text-black"
-        >
-          Email Address
-        </label>
-        <input
-          type="email"
-          placeholder="example@domain.com"
-          className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
-          {...register("email", { required: true })}
-        />
-      </div>
-      <div className="mb-5">
-        <label
-          htmlFor="message"
-          className="mb-3 block text-base font-medium text-black"
-        >
-          Message
-        </label>
-        <textarea
-          rows={4}
-          placeholder="Type your message"
-          className="w-full resize-none rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
-          {...register("message", { required: true })}
-        />
-      </div>
-      <div>
+    <section>
+      <aside></aside>
+      <form className="p-4" onSubmit={handleSubmit}>
+        <div className="mb-4">
+          <label htmlFor="name" className="block mb-1">
+            Name
+          </label>
+          <input
+            ref={nameRef}
+            id="name"
+            placeholder="Enter your name"
+            className="w-full p-2 border rounded-md"
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="email" className="block mb-1">
+            Email
+          </label>
+          <input
+            ref={emailRef}
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            className="w-full p-2 border rounded-md"
+          />
+        </div>
+        <div className="mb-4">
+          {/* New form group for the message */}
+          <label htmlFor="message" className="block mb-1">
+            Message
+          </label>
+          <textarea
+            ref={messageRef}
+            id="message"
+            placeholder="Enter your message"
+            className="w-full p-2 border rounded-md"
+          ></textarea>
+        </div>
         <button
-          type="submit"
-          disabled={submitting}
-          className="hover:shadow-form rounded-md bg-purple-500 py-3 px-8 text-base font-semibold text-white outline-none"
+          className="bg-blue-500 text-white py-2 px-4 rounded-md"
+          disabled={loading}
         >
-          {submitting ? "Submitting..." : "Submit"}
+          {loading ? "Sending..." : "Send"}{" "}
+          {/* Change button text based on loading state */}
         </button>
-      </div>
-      {successMessage && (
-        <p className="text-green-600 mt-3">{successMessage}</p>
-      )}
-      {errorMessage && <p className="text-red-600 mt-3">{errorMessage}</p>}
-    </form>
+      </form>
+    </section>
   );
-};
+}
 
-export default ContactForm;
+//   return (
+//     <section>
+//       <aside></aside>
+//       <form className="for" onSubmit={handleSubmit}>
+//         <div className="form_group">
+//           <label htmlFor="">Name</label>
+//           <input ref={nameRef} placeholder="Enter your name" />
+//         </div>
+//         <div className="form_group">
+//           <label htmlFor="">Email</label>
+//           <input ref={emailRef} type="email" placeholder="Enter your email" />
+//         </div>
+//         <div className="form_group">
+//           {" "}
+//           {/* New form group for the message */}
+//           <label htmlFor="">Message</label>
+//           <textarea
+//             ref={messageRef}
+//             placeholder="Enter your message"
+//           ></textarea>
+//         </div>
+//         <button className="btn" disabled={loading}>
+//           {loading ? "Sending..." : "Send"}{" "}
+//           {/* Change button text based on loading state */}
+//         </button>
+//       </form>
+//     </section>
+//   );
+// }
