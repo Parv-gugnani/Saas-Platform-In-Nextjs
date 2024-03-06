@@ -1,6 +1,7 @@
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import { WavyBackground } from "@/components/ui/wavy-background";
+import Image from "next/image";
 
 const ContactPage = () => {
   return (
