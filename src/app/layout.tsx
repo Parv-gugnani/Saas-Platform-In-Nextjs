@@ -7,7 +7,12 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import Providers from "@/components/Providers";
 import Footer from "@/components/Footer";
-import { WavyBackground } from "@/components/ui/wavy-background";
+import {
+  RegisterLink,
+  LoginLink,
+  LogoutLink,
+} from "@kinde-oss/kinde-auth-nextjs/components";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,7 +45,7 @@ export default function RootLayout({
             {children}
             <Toaster />
           </ThemeProvider>
-          <Footer />
+          {/* <Footer /> */}
         </body>
       </Providers>
     </html>

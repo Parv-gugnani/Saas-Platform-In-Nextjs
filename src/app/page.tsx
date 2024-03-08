@@ -13,16 +13,16 @@ import Link from "next/link";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import Footer from "@/components/Footer";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
-//service id  - service_xc3nlhp
-//
 const words = `MomentumX allows you to have conversations with any PDF documents.
 Simply upload your file and start asking questions.`;
 
 export default function Home() {
-  //
-
-  //
   return (
     <>
       <MaxWidthWrapper className="mb-12 mt-28 sm:mt-40 flex flex-col items-center justify-center text-center ">
@@ -44,7 +44,6 @@ export default function Home() {
             Get started <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </Link>
-        {/* <Button formAction={send}>test</Button> */}
       </MaxWidthWrapper>
 
       <div>
@@ -172,6 +171,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
