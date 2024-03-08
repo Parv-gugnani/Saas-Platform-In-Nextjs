@@ -13,6 +13,7 @@ const Page = () => {
   trpc.authCallback.useQuery(undefined, {
     onSuccess: ({ success }) => {
       if (success) {
+        // user is synced to db
         router.push(origin ? `/${origin}` : "/dashboard");
       }
     },
@@ -30,7 +31,7 @@ const Page = () => {
       <div className="flex flex-col items-center gap-2">
         <Loader2 className="h-8 w-8 animate-spin text-zinc-800" />
         <h3 className="font-semibold text-xl">Setting up your account...</h3>
-        <p>You will be redirected automatically☝.</p>
+        <p>You will be redirected automatically.</p>
       </div>
     </div>
   );
