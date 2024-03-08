@@ -6,7 +6,6 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 import { PineconeStore } from "langchain/vectorstores/pinecone";
 import { NextRequest } from "next/server";
-
 import { OpenAIStream, StreamingTextResponse } from "ai";
 
 export const POST = async (req: NextRequest) => {
@@ -15,7 +14,7 @@ export const POST = async (req: NextRequest) => {
   const body = await req.json();
 
   const { getUser } = getKindeServerSession();
-  const user = getUser();
+  const user = await getUser();
 
   const { id: userId } = user;
 

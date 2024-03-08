@@ -1,4 +1,11 @@
+import {
+  RegisterLink,
+  LoginLink,
+  LogoutLink,
+} from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { getUser } from "@kinde-oss/kinde-auth-nextjs/dist/types/session/getUser";
+//
 import { privateProcedure, publicProcedure, router } from "./trpc";
 import { TRPCError } from "@trpc/server";
 import { db } from "@/db";
@@ -10,13 +17,13 @@ import { PLANS } from "@/config/stripe";
 
 export const appRouter = router({
   authCallback: publicProcedure.query(async () => {
-    const { getUser } = getKindeServerSession();
-    const user = getUser();
+    const getUser = getKindeServerSession();
+    const user = await getUser();
 
     if (!user.id || !user.email) throw new TRPCError({ code: "UNAUTHORIZED" });
 
     // check if the user is in the database
-    const dbUser = await db.user.findFirst({
+    const dbUser = db.user.findFirst({
       where: {
         id: user.id,
       },

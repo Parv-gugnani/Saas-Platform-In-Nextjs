@@ -2,9 +2,9 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { useToast } from "./ui/use-toast"; // Added import for useToast
-import { Button } from "./ui/button"; // Added import for Button
-import "./contactform.css";
+import { useToast } from "./ui/use-toast";
+import { Button } from "./ui/button";
+import Footer from "./Footer";
 
 export default function ContactForm() {
   const emailRef = useRef<HTMLInputElement>(null);

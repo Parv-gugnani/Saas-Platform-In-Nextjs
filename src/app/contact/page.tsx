@@ -14,6 +14,8 @@ const ContactPage = () => {
           <ContactForm />
         </div>
       </main>
+      {/* TODO: */}
+      <h1 className="py-8 px-8">Add a slider something or socials</h1>
     </div>
   );
 };

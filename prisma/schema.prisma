@@ -1,11 +1,12 @@
-generator client {
-  provider = "prisma-client-js"
-}
 
 datasource db {
   provider     = "mysql"
-  url          = env("mysql://root:Pa9812974231@localhost:3306/pdfdb")
-  relationMode = "prisma"
+  url          = "mysql://root:Pa9812974231@localhost:3306/pdfdb"
+}
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
 }
 
 model User {

@@ -24,10 +24,14 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-tooltip": "^1.0.7",
-    "@trpc/react-query": "^10.45.1",
-    "@trpc/server": "^10.45.1",
+    "@tanstack/react-query": "^5.25.0",
+    "@trpc/client": "^11.0.0-next-beta.315",
+    "@trpc/next": "^11.0.0-next-beta.315",
+    "@trpc/react-query": "^11.0.0-next-beta.315",
+    "@trpc/server": "^11.0.0-next-beta.315",
     "@types/nodemailer": "^6.4.14",
     "@uploadthing/react": "^6.2.4",
+    "ai": "^3.0.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "data-client": "^1.0.1",
@@ -67,6 +71,6 @@
     "eslint-config-next": "14.1.0",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "typescript": "^5.5.0-dev.20240308"
   }
 }
