@@ -2,11 +2,6 @@ import Dashboard from "@/components/Dashboard";
 import { db } from "@/db";
 import { getUserSubscriptionPlan } from "@/lib/stripe";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import {
-  RegisterLink,
-  LoginLink,
-  LogoutLink,
-} from "@kinde-oss/kinde-auth-nextjs/components";
 import { redirect } from "next/navigation";
 
 const Page = async () => {

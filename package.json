@@ -25,10 +25,10 @@
     "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@tanstack/react-query": "^5.25.0",
-    "@trpc/client": "^11.0.0-next-beta.315",
-    "@trpc/next": "^11.0.0-next-beta.315",
-    "@trpc/react-query": "^11.0.0-next-beta.315",
-    "@trpc/server": "^11.0.0-next-beta.315",
+    "@trpc/client": "^11.0.0-next-beta.316",
+    "@trpc/next": "^11.0.0-next-beta.316",
+    "@trpc/react-query": "^11.0.0-next-beta.316",
+    "@trpc/server": "^11.0.0-next-beta.316",
     "@types/nodemailer": "^6.4.14",
     "@uploadthing/react": "^6.2.4",
     "ai": "^3.0.7",
@@ -60,7 +60,8 @@
     "stripe": "^14.18.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
-    "uploadthing": "^6.4.1"
+    "uploadthing": "^6.4.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",

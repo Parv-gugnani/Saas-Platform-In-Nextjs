@@ -1,7 +1,8 @@
 import { type ClassValue, clsx } from "clsx";
 import { Metadata } from "next";
 import { twMerge } from "tailwind-merge";
-import { FormData } from "@/components/ContactForm";
+// import { FormData } from "@/components/ContactForm";
+import { FormData } from "openai/_shims/index.mjs";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
