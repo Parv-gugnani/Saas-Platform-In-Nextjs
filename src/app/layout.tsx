@@ -31,21 +31,20 @@ export default function RootLayout({
       <Providers>
         <body
           className={cn(
-            "min-h-screen font-sans antialiased grainy ",
+            "min-h-screen font-sans antialiased grainy",
             inter.className
           )}
         >
           <Navbar />
           <ThemeProvider
             attribute="class"
-            defaultTheme="light"
+            defaultTheme="lgiht"
             enableSystem
             disableTransitionOnChange
           >
             {children}
             <Toaster />
           </ThemeProvider>
-          {/* <Footer /> */}
         </body>
       </Providers>
     </html>
