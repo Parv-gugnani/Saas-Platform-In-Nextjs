@@ -52,7 +52,17 @@ const Footer = () => {
         <p className="mb-4 text-sm">
           © {new Date().getFullYear()} MomentumX. All rights reserved.
         </p>
-        <p className="text-sm">Designed and developed by Parv</p>
+        <p className="text-sm">
+          Designed and developed by{" "}
+          <Link
+            href="https://www.linkedin.com/in/parv-gugnani/"
+            target="_blank"
+          >
+            <span className="font-semibold underline underline-offset-1">
+              Parv
+            </span>
+          </Link>
+        </p>
       </div>
     </footer>
   );
