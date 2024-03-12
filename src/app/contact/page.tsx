@@ -10,7 +10,7 @@ const ContactPage = () => {
         <h1 className="text-3xl font-bold relative z-10">Contact Us</h1>
       </header>
       <main className="flex-grow container mx-auto px-4 py-8">
-        //TODO:add the recaptcha form
+        {/* //TODO:add the recaptcha form */}
         <div className="max-w-lg mx-auto">
           <ContactForm />
         </div>
