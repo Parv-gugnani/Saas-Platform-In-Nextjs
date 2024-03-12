@@ -10,6 +10,7 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { ArrowRight } from "lucide-react";
 import UserAccountNav from "./UserAccountNav";
 import MobileNav from "./MobileNav";
+import { ModeToggle } from "./ModeToggle";
 
 const Navbar = async () => {
   const { getUser } = getKindeServerSession();
@@ -76,6 +77,7 @@ const Navbar = async () => {
               </>
             )}
           </div>
+          <ModeToggle />
         </div>
       </MaxWidthWrapper>
     </nav>
