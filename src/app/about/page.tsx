@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const AboutPage = () => {
@@ -12,11 +13,20 @@ const AboutPage = () => {
 
       <h2 className="text-2xl font-bold my-10">Our Team</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-xl font-semibold mb-1">Parv gugnani</h3>
+        <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl">
+          <div className="flex justify-center">
+            <Image
+              src="/parv.jpg"
+              alt="parvimg"
+              width="100"
+              height="100"
+              className="rounded-full"
+            />
+          </div>
+          <h3 className="text-xl font-semibold mb-1">Parv Gugnani</h3>
           <p className="text-gray-400 mb-5">Full Stack Developer</p>
           <p className="text-gray-600 text-clip">
-            I am Full Stack developer and working on few projects for my
+            I am a Full Stack developer and working on a few projects for my
             personal experience.
           </p>
         </div>

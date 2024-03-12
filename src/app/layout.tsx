@@ -13,6 +13,7 @@ import {
   LogoutLink,
 } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import MovingWave from "@/components/wave";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,16 +36,16 @@ export default function RootLayout({
             inter.className
           )}
         >
-          <Navbar />
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="lgiht"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-            <Toaster />
-          </ThemeProvider>
+          <div className="relative">
+            <MovingWave />
+            <div className="relative z-10">
+              <Navbar />
+
+              {children}
+              <Toaster />
+              {/*  */}
+            </div>
+          </div>
         </body>
       </Providers>
     </html>

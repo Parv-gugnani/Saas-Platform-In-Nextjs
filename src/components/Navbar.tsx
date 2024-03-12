@@ -77,7 +77,7 @@ const Navbar = async () => {
               </>
             )}
           </div>
-          <ModeToggle />
+          {/* <ModeToggle /> */}
         </div>
       </MaxWidthWrapper>
     </nav>
