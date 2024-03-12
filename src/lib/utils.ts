@@ -1,6 +1,6 @@
-import { type ClassValue, clsx } from "clsx";
-import { Metadata } from "next";
+import { ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { Metadata } from "next";
 // import { FormData } from "@/components/ContactForm";
 import { FormData } from "openai/_shims/index.mjs";
 

@@ -1,3 +1,5 @@
+import { HeroScrollDemo } from "@/components/scrollfunc";
+import { ContainerScroll } from "@/components/ui/scroll-anim";
 import Image from "next/image";
 import React from "react";
 

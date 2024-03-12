@@ -36,16 +36,9 @@ export default function RootLayout({
             inter.className
           )}
         >
-          <div className="relative">
-            <MovingWave />
-            <div className="relative z-10">
-              <Navbar />
-
-              {children}
-              <Toaster />
-              {/*  */}
-            </div>
-          </div>
+          <Navbar />
+          {children}
+          <Toaster />
         </body>
       </Providers>
     </html>

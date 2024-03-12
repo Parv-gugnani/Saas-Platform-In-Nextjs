@@ -18,6 +18,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
+import { HeroScrollDemo } from "@/components/scrollfunc";
 
 const words = `MomentumX allows you to have conversations with any PDF documents.
 Simply upload your file and start asking questions.`;
@@ -61,22 +62,7 @@ export default function Home() {
             />
           </div>
 
-          <div>
-            <div className="mx-auto max-w-6xl px-6 lg:px-8">
-              <div className="mt-16 flow-root sm:mt-24 ">
-                <div className="-m-2 rounded-xl bg-gray-200 p-2 ring-1 ring-inset ring-gray-400 lg:-m-4 lg:rounded-2xl lg:p-4 ">
-                  <Image
-                    src="/dashboard-preview.jpg"
-                    alt="product preview"
-                    width={1364}
-                    height={866}
-                    quality={100}
-                    className="rounded-md bg-white p-2 sm:p-8 md:p-20 shadow-2xl ring-1 ring-gray-400 bg-gradient-to-b from-yellow-50 backdrop-blur-lg"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+          <HeroScrollDemo />
 
           <div
             aria-hidden="true"
