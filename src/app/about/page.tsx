@@ -8,7 +8,6 @@ import { BackgroundBeams } from "@/components/ui/backbeam";
 const AboutPage = () => {
   return (
     <div className="container mx-auto p-8">
-      <BackgroundBeams />
       <h1 className="text-4xl font-bold mb-8">About Us</h1>
       <p className="text-lg mb-4">
         Welcome to our company About page! Lorem ipsum dolor sit amet,
@@ -16,7 +15,7 @@ const AboutPage = () => {
         suscipit. Duis aliquam facilisis nisi.
       </p>
 
-      <h2 className="text-2xl font-bold my-10">Our Team</h2>
+      <h2 className="text-2xl font-bold my-10 overflow-hidden">Our Team</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl">
           <div className="flex justify-center">

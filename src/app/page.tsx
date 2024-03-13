@@ -18,7 +18,6 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { HeroScrollDemo } from "@/components/scrollfunc";
-import { BackgroundBeamsDemo } from "@/components/backB";
 
 const words = `MomentumX allows you to have conversations with any PDF documents.
 Simply upload your file and start asking questions.`;

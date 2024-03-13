@@ -2,6 +2,14 @@
 import Link from "next/link";
 import ContactForm from "./ContactForm";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const Footer = () => {
   return (
@@ -18,11 +26,25 @@ const Footer = () => {
               About Us
             </p>
           </Link>
-          <Link href="/services" passHref>
-            <p className="mr-6 text-lg cursor-pointer hover:text-gray-200 transition-colors duration-300">
-              Services
-            </p>
-          </Link>
+          {/* <Link href="/services" passHref> */}
+          <p className="mr-6 text-lg cursor-pointer hover:text-gray-200 transition-colors duration-300">
+            {/* Services */}
+            <Sheet>
+              <SheetTrigger>Services</SheetTrigger>
+              <SheetContent>
+                <SheetHeader>
+                  <SheetTitle className="font-bold text-4xl">
+                    Our Services
+                  </SheetTitle>
+                  <SheetDescription>
+                    This action cannot be undone. This will permanently delete
+                    your account and remove your data from our servers.
+                  </SheetDescription>
+                </SheetHeader>
+              </SheetContent>
+            </Sheet>
+          </p>
+          {/* </Link> */}
           <Link href="/blog" passHref>
             <p className="text-lg cursor-pointer hover:text-gray-200 transition-colors duration-300">
               Blog
