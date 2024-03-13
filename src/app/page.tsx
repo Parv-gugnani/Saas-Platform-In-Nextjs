@@ -11,7 +11,6 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { WavyBackground } from "@/components/ui/wavy-background";
 import Footer from "@/components/Footer";
 import {
   HoverCard,
@@ -19,6 +18,7 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { HeroScrollDemo } from "@/components/scrollfunc";
+import { BackgroundBeamsDemo } from "@/components/backB";
 
 const words = `MomentumX allows you to have conversations with any PDF documents.
 Simply upload your file and start asking questions.`;
@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <>
       <MaxWidthWrapper className="mb-12 mt-28 sm:mt-40 flex flex-col items-center justify-center text-center ">
-        <div className="mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-gray-900 px-7 py-2 shadow-md backdrop-blur transition-all hover:border-gray-300 hover:bg-gray-700/50">
+        <div className="mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-gray-900 px-7 py-2 shadow-md backdrop-blur hover:bg-gray-700/50 font-bold transform hover:-translate-y-1 transition duration-400">
           <p className="text-sm font-semibold text-yellow-500">
             MomentumX is live
           </p>
@@ -36,6 +36,7 @@ export default function Home() {
           Chat with your <span className="text-yellow-500">Documents</span> in
           seconds
         </h1>
+
         <p className="mt-5 max-w-prose text-black sm:text-lg text-center">
           MomentumX allows you to have conversations with any PDF documents.
           Simply upload your file and start asking questions.
@@ -157,6 +158,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       <Footer />
     </>
   );

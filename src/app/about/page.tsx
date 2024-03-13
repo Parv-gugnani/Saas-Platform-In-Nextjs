@@ -1,11 +1,14 @@
 import { HeroScrollDemo } from "@/components/scrollfunc";
+
 import { ContainerScroll } from "@/components/ui/scroll-anim";
 import Image from "next/image";
 import React from "react";
+import { BackgroundBeams } from "@/components/ui/backbeam";
 
 const AboutPage = () => {
   return (
     <div className="container mx-auto p-8">
+      <BackgroundBeams />
       <h1 className="text-4xl font-bold mb-8">About Us</h1>
       <p className="text-lg mb-4">
         Welcome to our company About page! Lorem ipsum dolor sit amet,
