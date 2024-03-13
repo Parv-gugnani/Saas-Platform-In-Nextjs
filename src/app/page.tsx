@@ -18,9 +18,25 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { HeroScrollDemo } from "@/components/scrollfunc";
+import { ContainerScroll } from "@/components/ui/scroll-anim";
 
 const words = `MomentumX allows you to have conversations with any PDF documents.
 Simply upload your file and start asking questions.`;
+
+const peaple = [
+  {
+    name: "John Doe",
+    designation: "Software Engineer",
+    image: "",
+    badge: "Gold",
+  },
+  {
+    name: "Jane Smith",
+    designation: "UI/UX Designer",
+    image: "",
+    badge: "Silver",
+  },
+];
 
 export default function Home() {
   return (
@@ -62,7 +78,7 @@ export default function Home() {
             />
           </div>
 
-          <HeroScrollDemo />
+          <ContainerScroll users={peaple} titleComponent={null} />
 
           <div
             aria-hidden="true"

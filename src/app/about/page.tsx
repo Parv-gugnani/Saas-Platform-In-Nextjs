@@ -3,7 +3,7 @@ import { HeroScrollDemo } from "@/components/scrollfunc";
 import { ContainerScroll } from "@/components/ui/scroll-anim";
 import Image from "next/image";
 import React from "react";
-import { BackgroundBeams } from "@/components/ui/backbeam";
+import { Button } from "@/components/ui/movingbr";
 
 const AboutPage = () => {
   return (
@@ -16,6 +16,7 @@ const AboutPage = () => {
       </p>
 
       <h2 className="text-2xl font-bold my-10 overflow-hidden">Our Team</h2>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl">
           <div className="flex justify-center">
@@ -28,6 +29,7 @@ const AboutPage = () => {
             />
           </div>
           <h3 className="text-xl font-semibold mb-1">Parv Gugnani</h3>
+
           <p className="text-gray-400 mb-5">Full Stack Developer</p>
           <p className="text-gray-600 text-clip">
             I am a Full Stack developer and working on a few projects for my
