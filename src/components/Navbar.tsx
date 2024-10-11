@@ -11,10 +11,14 @@ import { ArrowRight } from "lucide-react";
 import UserAccountNav from "./UserAccountNav";
 import MobileNav from "./MobileNav";
 import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navb";
+import {
+  HoveredLink,
+  Menu,
+  MenuItem,
+  ProductItem,
+} from "@/components/ui/navbarmenu";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "./ModeToggle";
-import 
 
 const Navbar = async () => {
   const { getUser } = getKindeServerSession();
@@ -82,7 +86,7 @@ const Navbar = async () => {
             )}
           </div>
           <div className="relative w-full flex items-center justify-center">
-            <navm className="top-2" />
+            <nav className="left-10" />
             <p className="text-black dark:text-white">
               The Navbar will show on top of the page
             </p>
@@ -95,4 +99,3 @@ const Navbar = async () => {
 };
 
 export default Navbar;
-
