@@ -1,3 +1,4 @@
+"use client";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { Button } from "@/components/ui/button";
 import ContactForm from "@/components/ContactForm";
@@ -19,6 +20,7 @@ import {
 } from "@/components/ui/hover-card";
 import { HeroScrollDemo } from "@/components/scrollfunc";
 import { ContainerScroll } from "@/components/ui/scroll-anim";
+import { useState } from "react";
 
 const words = `MomentumX allows you to have conversations with any PDF documents.
 Simply upload your file and start asking questions.`;

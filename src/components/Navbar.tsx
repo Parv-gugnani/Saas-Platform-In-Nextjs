@@ -86,10 +86,7 @@ const Navbar = async () => {
             )}
           </div>
           <div className="relative w-full flex items-center justify-center">
-            <nav className="left-10" />
-            <p className="text-black dark:text-white">
-              The Navbar will show on top of the page
-            </p>
+            <nav className="bottom-10" />
           </div>
           {/* <ModeToggle /> */}
         </div>
